@@ -10,43 +10,63 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
+    @State private var showingStockList = false
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+            VStack(alignment: .center){
+                Text("Kodak Portra").font(.largeTitle)
+                Text("ISO 400").font(.title2)
             }
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity
+            )
+            .padding()
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+            )
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: finishReel) {
+                        Label("Finish Reel", systemImage: "film")
+                    }
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: showStockList) {
+                        Label("Film Stocks", systemImage: "list.and.film")
                     }
                 }
             }
-            Text("Select an item")
-        }
+            .navigationTitle(Text("You're Shooting"))
+            .sheet(isPresented: $showingStockList) {
+                StockList(viewMode: .ViewOnly)
+            }
+           
+        } .navigationViewStyle(StackNavigationViewStyle())
     }
-
+    
+    private func finishReel() {
+        
+    }
+    
+    private func showStockList() {
+        showingStockList.toggle()
+    }
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -57,11 +77,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -83,6 +103,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.landscapeLeft)
     }
 }

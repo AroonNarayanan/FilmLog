@@ -13,6 +13,11 @@
 		C028F4682777B12800775206 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C028F4672777B12800775206 /* Preview Assets.xcassets */; };
 		C028F46A2777B12800775206 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F4692777B12800775206 /* Persistence.swift */; };
 		C028F46D2777B12800775206 /* FilmLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C028F46B2777B12800775206 /* FilmLog.xcdatamodeld */; };
+		C028F4742777DD2800775206 /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F4732777DD2800775206 /* StockList.swift */; };
+		C028F4762777DDAF00775206 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F4752777DDAF00775206 /* Models.swift */; };
+		C028F4782777DE5F00775206 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F4772777DE5F00775206 /* SampleData.swift */; };
+		C028F47B2777E88800775206 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F47A2777E88800775206 /* Utils.swift */; };
+		C028F47D2777EEB300775206 /* AddStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028F47C2777EEB300775206 /* AddStock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		C028F4672777B12800775206 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C028F4692777B12800775206 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C028F46C2777B12800775206 /* FilmLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilmLog.xcdatamodel; sourceTree = "<group>"; };
+		C028F4732777DD2800775206 /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
+		C028F4752777DDAF00775206 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C028F4772777DE5F00775206 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		C028F47A2777E88800775206 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C028F47C2777EEB300775206 /* AddStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,11 @@
 				C028F4692777B12800775206 /* Persistence.swift */,
 				C028F46B2777B12800775206 /* FilmLog.xcdatamodeld */,
 				C028F4662777B12800775206 /* Preview Content */,
+				C028F4732777DD2800775206 /* StockList.swift */,
+				C028F4752777DDAF00775206 /* Models.swift */,
+				C028F4772777DE5F00775206 /* SampleData.swift */,
+				C028F47A2777E88800775206 /* Utils.swift */,
+				C028F47C2777EEB300775206 /* AddStock.swift */,
 			);
 			path = FilmLog;
 			sourceTree = "<group>";
@@ -144,9 +159,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C028F46A2777B12800775206 /* Persistence.swift in Sources */,
+				C028F4782777DE5F00775206 /* SampleData.swift in Sources */,
+				C028F47D2777EEB300775206 /* AddStock.swift in Sources */,
 				C028F4632777B12700775206 /* ContentView.swift in Sources */,
 				C028F46D2777B12800775206 /* FilmLog.xcdatamodeld in Sources */,
 				C028F4612777B12700775206 /* FilmLogApp.swift in Sources */,
+				C028F4762777DDAF00775206 /* Models.swift in Sources */,
+				C028F4742777DD2800775206 /* StockList.swift in Sources */,
+				C028F47B2777E88800775206 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
